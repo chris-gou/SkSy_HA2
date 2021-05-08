@@ -1,0 +1,49 @@
+{% extends 'index.html' %} <!-- this gets the navbar -->
+{% block content %}
+    <!-- TODO-Table -->
+    <div class="container-md">
+        <h2>Add New Todos:</h2>
+        <!-- add new todo we have 3 forms-->
+            <form class="form-inline" method="POST"> {% csrf_token %}
+                <label for="item">Add TODO:</label>
+                <input type="text" class="form-control" id="NEWTODOS" placeholder="Enter the Task" name="item">
+                <label for="deadline">Deadline:</label>
+                <input type="date" class="form-control" id="date" placeholder="Enter Deadline" name="deadline">
+                <label for="percentage">Progress in %:</label>
+                <input type="number" class="form-control" id="percentage" placeholder="Enter %" name="percent">
+                <!-- botton for adding the new task -->
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+    </div>
+    <div class="container-md">
+        
+        <h4> TODOS Table </h4>
+        <div class="table-responsive-md">
+            <table class="table table-bordered table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col-md">#</th>
+                        <th scope="col-md">Task</th>
+                        <th scope="col-md">Deadline</th>
+                        <th scope="col-md">Progress in %</th>
+                        <th scope="col-md">Control</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if all_items %}
+                        {% for thing in all_items %}
+                            <tr>
+                                <th scope="row" >{{ thing.id }}</th>
+                                    <td>{{ thing.item }}</td>
+                                    <td>{{ thing.deadline }}</td>
+                                    <td>{{ thing.percent }}</td>
+                                    <td><a href="#">Edit</a>
+                                    <a href="{% url 'delete' thing.id %}">Delete</a>
+                                    </td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>        
+    </div>
+{% endblock %}
