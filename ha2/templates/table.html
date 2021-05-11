@@ -37,8 +37,8 @@
                                     <td>{{ thing.item }}</td>
                                     <td>{{ thing.deadline }}</td>
                                     <td>{{ thing.percent }}</td>
-                                    <td><a href="{% url 'update' thing.id %}">Edit</a>
-                                    <a href="{% url 'delete' thing.id %}">Delete</a>
+                                    <td><a class="btn btn-warning" href="{% url 'update' thing.id %}">Edit</a>
+                                    <a class="btn btn-danger" href="{% url 'delete' thing.id %}">Delete</a>
                                     </td>
                             </tr>
                         {% endfor %}
