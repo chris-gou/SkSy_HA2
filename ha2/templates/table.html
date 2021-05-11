@@ -33,11 +33,11 @@
                     {% if all_items %}
                         {% for thing in all_items %}
                             <tr>
-                                <th scope="row" >{{ thing.id }}</th>
+                                <th scope="row" >{{ forloop.counter }}</th> <!-- changed this from thing id to just counter -->
                                     <td>{{ thing.item }}</td>
                                     <td>{{ thing.deadline }}</td>
                                     <td>{{ thing.percent }}</td>
-                                    <td><a href="#">Edit</a>
+                                    <td><a href="{% url 'update' thing.id %}">Edit</a>
                                     <a href="{% url 'delete' thing.id %}">Delete</a>
                                     </td>
                             </tr>
