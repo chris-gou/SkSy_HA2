@@ -1,1 +1,1 @@
-to run this project you should open the terminal and navigate to the project folder contains manage.py then you have to type python manage.py runserver command in the terminal. then terminal gives you an ip address back. You should copy this ip address and paste it to your browser. 
+to run this project you should open the terminal and navigate to the project folder contains manage.py then you have to type ```python manage.py runserver``` command in the terminal. then terminal gives you an ip address back. You should copy this ip address and paste it to your browser. 
