@@ -1,0 +1,10 @@
+<form class="form-inline" method="POST"> {% csrf_token %}
+    <label for="item">Add TODO:</label>
+    <input type="text" class="form-control" id="NEWTODOS" placeholder="Enter the Task" name="item" required>
+    <label for="deadline">Deadline:</label>
+    <input type="date" class="form-control" id="date" placeholder="Enter Deadline" name="deadline" required>
+    <label for="percentage">Progress in %:</label>
+    <input type="number" class="form-control" id="percentage" placeholder="Enter %" name="percent" required>
+    <!-- botton for adding the new task -->
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
